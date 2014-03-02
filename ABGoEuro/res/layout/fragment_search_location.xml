@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+    android:background="@color/bg_color"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:padding="@dimen/location_screen_paddings" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/location_title"
+        android:textColor="@color/primary_color"
+        android:textSize="@dimen/location_title_text_size" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actv_fragment_search_location_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/location_item_margin_top"
+        android:hint="@string/location_start_hint"
+        android:textColor="@color/primary_color"
+        android:textSize="@dimen/location_text_size" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actv_fragment_search_location_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/location_item_margin_top"
+        android:hint="@string/location_end_hint"
+        android:textColor="@color/primary_color"
+        android:textSize="@dimen/location_text_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/location_item_margin_top" >
+
+        <EditText
+            android:id="@+id/et_fragment_search_location_calendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="date"
+            android:hint="@string/location_date_hint"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/location_text_size"
+            android:maxLength="10" />
+        
+        <ImageView 
+            android:id="@+id/iv_fragment_search_location_show_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar_selector"/>
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn_fragment_search_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/location_item_margin_top"
+        android:text="@string/location_search"
+        android:textSize="@dimen/location_text_size"
+        android:drawableLeft="@drawable/ic_action_search"
+        android:paddingRight="@dimen/location_button_padding_right"
+  		android:gravity="left|center_vertical"
+  		android:enabled="false" />
+</LinearLayout>

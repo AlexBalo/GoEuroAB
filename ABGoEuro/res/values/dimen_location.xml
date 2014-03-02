@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Used only generic dimen file for testing purposes -->
+    <dimen name="location_screen_paddings">20dp</dimen>
+    <dimen name="location_title_text_size">30sp</dimen>
+    <dimen name="location_text_size">20sp</dimen>
+    <dimen name="location_item_margin_top">20dp</dimen>
+    <dimen name="location_button_padding_right">20dp</dimen>
+    
+</resources>

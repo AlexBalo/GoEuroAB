@@ -5,4 +5,12 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
+    <string name="location_title">GoEuro</string>
+    <string name="location_start_hint">Start location</string>
+    <string name="location_end_hint">End location</string>
+    <string name="location_date_hint">Select a date from calendar</string>
+    <string name="location_search">Search</string>
+    
+    <string name="location_search_not_implemented">Search is not yet implemented</string>
+    
 </resources>
