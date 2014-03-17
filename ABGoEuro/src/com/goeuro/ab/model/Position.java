@@ -1,13 +1,19 @@
 package com.goeuro.ab.model;
 
-public class Position {
+import java.util.Comparator;
+
+import android.location.Location;
+
+public class Position implements Comparable<Position> {
 
     private String mRootType; 
     private String mId;
     private String mName;
     private String mType;
-    private String mLatitude;
-    private String mLongitude;
+    private double mLatitude;
+    private double mLongitude;
+    
+    private Location mUserLocation;
     
     // Getters
     public String getRootType() { return mRootType; }
@@ -18,9 +24,11 @@ public class Position {
     
     public String getType() { return mType; }
     
-    public String getLatitude() { return mLatitude; }
+    public double getLatitude() { return mLatitude; }
     
-    public String getLongitude() { return mLongitude; }
+    public double getLongitude() { return mLongitude; }
+    
+    public Location getUserLocation() { return mUserLocation; }
     
     // Setters
     public void setRootType(String rootType) {
@@ -39,11 +47,50 @@ public class Position {
     	mType = type; 
     }
     
-    public void setLatitude(String latitude) { 
+    public void setLatitude(Double latitude) { 
     	mLatitude = latitude; 
     }
     
-    public void setLongitude(String longitude) { 
+    public void setLongitude(Double longitude) { 
     	mLongitude = longitude; 
     }
+    
+    public void setUserLocation(Location userLocation) {
+    	mUserLocation = userLocation;
+    }
+
+    
+	public int compareTo(Position comparePosition) {
+ 
+		//ascending order
+		return this.compareTo(comparePosition);
+ 
+	}
+ 
+	public static Comparator<Position> PositionDistanceComparator = new Comparator<Position>() {
+ 
+	    public int compare(Position position1, Position position2) {
+ 
+	    	Location userLocation = position1.getUserLocation();
+	    	
+	    	Location position1Location = new Location("First location");
+	    	position1Location.setLatitude(position1.getLatitude());
+	    	position1Location.setLongitude(position1.getLongitude());
+
+	    	Location position2Location = new Location("Second location");
+	    	position2Location.setLatitude(position2.getLatitude());
+	    	position2Location.setLongitude(position2.getLongitude());
+	    	
+	    	// Get distance in KMs
+	    	Float position1Distance = (userLocation.distanceTo(position1Location)) / 1000;
+	    	Float position2Distance = (userLocation.distanceTo(position2Location)) / 1000;
+ 
+	      //ascending order
+	      return position1Distance.compareTo(position2Distance);
+ 
+	      //descending order
+	      //return fruitName2.compareTo(fruitName1);
+	    }
+ 
+	};
 }

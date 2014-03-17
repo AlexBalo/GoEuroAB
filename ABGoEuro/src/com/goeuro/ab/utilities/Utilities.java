@@ -1,5 +1,8 @@
 package com.goeuro.ab.utilities;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 
 public class Utilities {
@@ -11,4 +14,10 @@ public class Utilities {
 			Log.d(LOG_TAG, logMessage);
 		}
 	}
+	
+    public static boolean isInternetConnectionAvailable(Context context){
+        ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = connectivity.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
 }

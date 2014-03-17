@@ -25,14 +25,14 @@ public class DateTextWatcher implements TextWatcher {
 	public void afterTextChanged(Editable s) {
 		String text = mEditText.getText().toString();
 
-		if (text.length() == 3 && !text.substring(2, 3).equals(".")) {
-			text = text.substring(0, 2) + "." + text.substring(2, 3);
+		if (text.length() >= 3 && !text.substring(2, 3).equals(".")) {
+			text = text.substring(0, 2) + "." + text.substring(2, text.length());
 			mEditText.setText(text);
 			mEditText.setSelection(text.length());
 		}
 		
-		if (text.length() == 6 && !text.substring(5, 6).equals(".")) {
-			text = text.substring(0, 5) + "." + text.substring(5, 6);
+		if (text.length() >= 6 && !text.substring(5, 6).equals(".")) {
+			text = text.substring(0, 5) + "." + text.substring(5, text.length());
 			mEditText.setText(text);
 			mEditText.setSelection(text.length());
 		}

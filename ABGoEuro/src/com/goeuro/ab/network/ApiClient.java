@@ -4,7 +4,6 @@ import android.net.Uri;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.goeuro.ab.utilities.Utilities;
 
 public class ApiClient {
@@ -17,10 +16,8 @@ public class ApiClient {
         Uri.Builder builder = new Uri.Builder()
         						.scheme(NetworkConfig.API_SCHEME)
         						.authority(NetworkConfig.API_DOMAIN)
-        						.path(NetworkConfig.API_NAME)
-        						.path(NetworkConfig.API_REST)
-        						.path(NetworkConfig.API_APPENDIX)
-        						.path(NetworkConfig.API_VERSION);
+        						.appendPath(NetworkConfig.API_APPENDIX)
+        						.appendPath(NetworkConfig.API_VERSION);
         
         mApiBaseUri = builder.build();
         Utilities.log("Building API Client with baseUrl: " + mApiBaseUri.toString());

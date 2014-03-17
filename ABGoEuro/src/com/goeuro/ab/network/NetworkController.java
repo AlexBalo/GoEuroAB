@@ -54,7 +54,7 @@ public class NetworkController {
         // int in its constructor.
         final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
 
-        // Use 1/32nd of the available memory for this memory cache.
+        // Use 1/8nd of the available memory for this memory cache.
         final int cacheSize = maxMemory / 8;
 
         Utilities.log("MaxMemory: " + maxMemory);

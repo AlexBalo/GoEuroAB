@@ -27,9 +27,10 @@ public class MainActivity extends FragmentActivity implements SearchLocationFrag
 		NetworkController.getInstance().init(getApplicationContext());
 		
         FragmentManager fm = getSupportFragmentManager();
+        SearchLocationFragment locationFragment = SearchLocationFragment.newInstance();
         if (savedInstanceState == null) {
             fm.beginTransaction()
-            	.add(R.id.fl_activity_main_fragment_container, new SearchLocationFragment(), FRAGMENT_TAG_SEARCH_LOCATION)
+            	.add(R.id.fl_activity_main_fragment_container, locationFragment, FRAGMENT_TAG_SEARCH_LOCATION)
             	.commit();
         } else {
             fm.findFragmentByTag(FRAGMENT_TAG_SEARCH_LOCATION);

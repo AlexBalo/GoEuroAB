@@ -5,12 +5,19 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
-    <string name="location_title">GoEuro</string>
+    <string name="location_title">Where do you want to go?</string>
     <string name="location_start_hint">Start location</string>
     <string name="location_end_hint">End location</string>
     <string name="location_date_hint">Select a date from calendar</string>
     <string name="location_search">Search</string>
     
+    <!-- Toasts -->
     <string name="location_search_not_implemented">Search is not yet implemented</string>
+    
+    <!-- Dialogs -->
+    <string name="network_status">** No network connection **</string>
+    <string name="network_status_enable_connection">Enable your internet connection and we can help you with your search</string>
+    <string name="settings">Settings</string>
+    <string name="cancel">Cancel</string>
     
 </resources>
